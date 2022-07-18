@@ -23,7 +23,7 @@ function renderPage() {
     const content = document.createElement("div");
     //buttons container
     const buttons = document.createElement("div");
-    //score
+    //render player and computer scores
     const playersScore = document.createElement("p");
     //create 3 choices 
     const btnRock = document.createElement("button");
@@ -103,6 +103,7 @@ function startNewGame() {
     playerChoice = '';
     playerWins = 0;
     computerWins = 0;
+    //clear the UI
     while(pageContainer.firstChild) {
         pageContainer.removeChild(pageContainer.firstChild);
     }
