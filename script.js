@@ -10,8 +10,6 @@ const winnerDiv = document.createElement("div");
 const scoreDiv = document.createElement("div");
 //player and comp current choices
 const choices  = document.createElement("p")
-pageContainer.appendChild(choices)
-
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3);
@@ -46,13 +44,13 @@ function setPlayerChoice(event) {
     let compChoice = getComputerChoice();
     playerChoice = event.target.innerText;
     playerChoice = playerChoice.toLowerCase();
-    console.log(playerChoice)
-    console.log(compChoice)
     //render player and computer choices
     choices.innerHTML = `
         Player choice: ${playerChoice}
-        <br>Computer chice: ${compChoice}
-        `;
+        <br>Computer choice: ${compChoice}
+    `;
+    pageContainer.appendChild(choices)
+
     getRoundWinner(playerChoice, compChoice);
     getGlobalWinner();
 }
